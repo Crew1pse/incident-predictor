@@ -1,0 +1,53 @@
+{
+  "features": [
+    "cpu_last",
+    "cpu_mean",
+    "cpu_std",
+    "cpu_max",
+    "cpu_delta",
+    "memory_last",
+    "memory_mean",
+    "memory_std",
+    "memory_max",
+    "memory_delta",
+    "error_rate_last",
+    "error_rate_mean",
+    "error_rate_std",
+    "error_rate_max",
+    "error_rate_delta",
+    "latency_last",
+    "latency_mean",
+    "latency_std",
+    "latency_max",
+    "latency_delta"
+  ],
+  "metrics": [
+    "cpu",
+    "memory",
+    "error_rate",
+    "latency"
+  ],
+  "window": 10,
+  "horizon_minutes": 10,
+  "threshold": 0.6734435237005058,
+  "sklearn_version": "1.9.1",
+  "data": "synthetic",
+  "test_report": {
+    "model": {
+      "precision": 0.954,
+      "recall": 0.572,
+      "pr_auc": 0.613,
+      "incidents_in_test": 18,
+      "incidents_caught_in_advance": 14,
+      "false_alarms_per_day": 0.24
+    },
+    "baseline_error_rate_rule": {
+      "precision": 0.409,
+      "recall": 0.261,
+      "pr_auc": 0.233,
+      "incidents_in_test": 18,
+      "incidents_caught_in_advance": 14,
+      "false_alarms_per_day": 3.3
+    }
+  }
+}

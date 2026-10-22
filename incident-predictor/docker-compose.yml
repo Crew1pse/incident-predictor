@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      PROMETHEUS_URL: http://prometheus:9090
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+    depends_on: [prometheus]
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports: ["9090:9090"]
+  node-exporter:                 # реальные метрики CPU/памяти хоста
+    image: prom/node-exporter
